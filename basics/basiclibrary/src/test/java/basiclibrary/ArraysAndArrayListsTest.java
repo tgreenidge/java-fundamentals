@@ -15,7 +15,13 @@ public class ArraysAndArrayListsTest {
         int[] arrayWithDupes = {2, 3, 3, 3, 3};
         int[] arrayWithNoDupes = {2, 3, 4, 5, 6};
         assertTrue("containsDuplicates method should return 'true'", ArraysAndArrayLists.containsDuplicates(arrayWithDupes));
-        assertFalse("containsMethod should return 'false'", ArraysAndArrayLists.containsDuplicates(arrayWithNoDupes));
+        assertFalse("containsMethod should return 'true'", ArraysAndArrayLists.containsDuplicates(arrayWithNoDupes));
+    }
+
+    @Test
+    public void testContainsNoDuplicates() {
+        int[] arrayWithNoDupes = {2, 3, 4, 5, 6};
+        assertFalse("containsMethod should return 'true'", ArraysAndArrayLists.containsDuplicates(arrayWithNoDupes));
     }
 
     @Test
