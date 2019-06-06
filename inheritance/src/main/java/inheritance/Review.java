@@ -5,6 +5,8 @@ public class Review {
     private String author;
     private Integer numStars;
     private Restaurant restaurant;
+    private Theater theater;
+    private Shop shop;
 
     public Review(String body, int numStars, String author) {
         this.body = body;
@@ -17,6 +19,23 @@ public class Review {
         this.numStars = numStars;
         this.author = author;
         this.restaurant = restaurant;
+        restaurant.addReview(this);
+    }
+
+    public Review(String body, int numStars, String author, Theater theater) {
+        this.body = body;
+        this.numStars = numStars;
+        this.author = author;
+        this.theater = theater;
+        theater.addReview(this);
+    }
+
+    public Review(String body, int numStars, String author, Shop shop) {
+        this.body = body;
+        this.numStars = numStars;
+        this.author = author;
+        this.shop = shop;
+        shop.addReview(this);
     }
 
     public Integer getNumStars() {
@@ -29,6 +48,14 @@ public class Review {
 
     public String getAuthor() {
         return author;
+    }
+
+    public void setTheater(Theater theater) {
+        this.theater = theater;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 
     public Restaurant getRestaurant() {
